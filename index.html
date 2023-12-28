@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+    <title>EIC AR</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="styles.css"> 
+
+    <!-- Include Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        
+    <!-- Include A-Frame -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    
+    <!-- Include AR.js -->
+    <script src="https://cdn.rawgit.com/AR-js-org/AR.js/3.3.0/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+    <!-- AR.js Scene -->
+    <a-scene arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;' style="display: none;" id="arScene">
+        
+        <a-marker type='barcode' value='32'>
+            <a-box position="0 0.5 0" material="opacity: 0;" class="mySwiper2Box">
+            </a-box>
+        </a-marker>
+
+        <a-marker type='barcode' value='31'>
+            <a-box position='0 0.5 0' material='color: blue;'></a-box>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+    
+    <!-- Initial Instruction Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <h2 class="title">Instructions</h2> 
+                <div class="subtitle">AR Permissions</div> 
+                <div class="text">
+                    <p>Grant Permissions: The app might ask for permissions to access your camera and other features. Make sure to allow these permissions for the app to function properly.
+                    </p></div>
+                </div>
+            <div class="swiper-slide">
+                <h2 class="title">Point your device</h2> 
+                <p>Hold your device up and point the camera towards the icon in the screen. Make sure the icon is clearly visible on your device's screen.Wait for Recognition...</p>
+            </div>
+            <div class="swiper-slide">
+                <h2>Explore the Content</h2>
+                <p>Once the icon is recognized, the app will display information or interactive content related to the icon. This could be text, images, videos, or even 3D models.</p>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Swiper2 content -->
+    <div class="mySwiper2" style="display: none;">
+        <!-- Swiper content -->
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <video autoplay muted loop>
+                    <source src="https://svs.gsfc.nasa.gov/vis/a000000/a004900/a004975/GISTEMP_Spiral_2022-03-06_1851_1080sq.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video></div>
+            <div class="swiper-slide"><p>The visualization presents monthly global temperature anomalies between the years 1880-2021. These temperatures are based on the GISS Surface Temperature Analysis (GISTEMP v4), an estimate of global surface temperature change. Anomalies are defined relative to a base period of 1951-1980. The data file used to create this visualization can be accessed here.</p></div>
+            <div class="swiper-slide">
+                <h2>Earth Observing fleet today</h2>
+                <video autoplay mited loop>
+                    <source src="https://svs.gsfc.nasa.gov/vis/a000000/a005000/a005067/fleet_today_30sec_nostars_sq.mp4" type="video/mp4"></video>
+            </div>
+            <div class="swiper-slide">
+                <div class="text"><p>An animated view of NASA's Earth observing fleet, as it looks today. This 30 second visualization is updated once per day. Time shown in UTC. This version is a square aspect ratio (2160x2160) with no star background.</p></div>
+            </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Close Button -->
+    <button class="close-btn">X</button>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="scripts/script.js"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>
