@@ -17,12 +17,22 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
 </head>
 <body>
+    <!-- NEW SCANNING Look -->
+    <div id="example-scanning-overlay" class="hidden">
+        <div class="inner">
+            <!-- Review this image overlay. Need to add afill screen image to block other areas of the trasnparent screen. Only the sccanner will be transparent -->
+            <!-- <img src="./images/scanning-overlay_03.png" alt="scanning">  -->
+            <img src="./images/5.webp">
+            <div class="scanline"></div>
+        </div>
+      </div>
+
     <!-- AR.js Scene -->
-    <a-scene id="arScene" mindar-image="imageTargetSrc: track/targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false"
+    <a-scene id="arScene" mindar-image="uiScanning:#example-scanning-overlay; imageTargetSrc: track/targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false"
     >
 
     <a-assets>
-      <img id="card0" src="track/1.webp" />
+      <img id="card0" src="images/marker_00.png" />
       <a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item>
     </a-assets>
   
@@ -42,17 +52,28 @@
     
     <!-- Initial Instruction Swiper -->
     <div class="swiper mySwiper">
+        <div
+        class="parallax-bg"
+        style="background-image:url(images/ISS_earth.en.jpg)"
+        data-swiper-parallax="-23%"
+        ></div>
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <h2 class="title">Instructions</h2> 
-                <div class="subtitle">AR Permissions</div> 
-                <div class="text">
-                    <p>Grant Permissions: The app might ask for permissions to access your camera and other features. Make sure to allow these permissions for the app to function properly.
-                    </p></div>
-                </div>
+                <h2 class="title" data-swiper-parallax="-100">Instructions</h2> 
+                <div class="subtitle" data-swiper-parallax="-200">AR Permissions</div> 
+                <div class="text"
+                data-swiper-parallax="-300"
+                data-swiper-parallax-duration="600"
+            >
+                <p>Grant Permissions: The app might ask for permissions to access your camera and other features. Make sure to allow these permissions for the app to function properly.
+                </p>
+            </div>
+        </div>
             <div class="swiper-slide">
-                <h2 class="title">Point your device</h2> 
-                <p>Hold your device up and point the camera towards the icon in the screen. Make sure the icon is clearly visible on your device's screen.Wait for Recognition...</p>
+                <h2 class="subtitle">Point your device</h2> 
+                <p>Hold your device up and point the camera towards the icons on the screen.<br> 
+                Make sure the icon is clearly visible on your device's screen.Wait for Recognition...</p>
+                <img src="images/marker_00.png">
             </div>
             <div class="swiper-slide">
                 <h2>Explore the Content</h2>
@@ -69,10 +90,12 @@
         <!-- Swiper content -->
         <div class="swiper-wrapper">
             <div class="swiper-slide">
+                <div class="text">
                 <video autoplay muted loop>
                     <source src="https://svs.gsfc.nasa.gov/vis/a000000/a004900/a004975/GISTEMP_Spiral_2022-03-06_1851_1080sq.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video></div>
+            </div>
             <div class="swiper-slide"><p>The visualization presents monthly global temperature anomalies between the years 1880-2021. These temperatures are based on the GISS Surface Temperature Analysis (GISTEMP v4), an estimate of global surface temperature change. Anomalies are defined relative to a base period of 1951-1980. The data file used to create this visualization can be accessed here.</p></div>
             <div class="swiper-slide">
                 <h2>Earth Observing fleet today</h2>
@@ -94,6 +117,6 @@
     <button class="close-btn">X</button>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="scripts/script.js"></script> 
-    <script src="scripts/load-swiper-content.js"></script>
+    
 </body>
 </html>

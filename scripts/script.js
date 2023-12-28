@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (swiperElement) {
         mySwiper = new Swiper(swiperElement, {
             // Swiper configuration for mySwiper
+            parallax: true,
             direction: 'horizontal',
             loop: false,
             pagination: { el: '.swiper-pagination', clickable: true },
@@ -86,4 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }); */
     }
 
+    /* Scanner the AR content */
+    // const markers = document.querySelectorAll('a-marker');
+    // markers.forEach(marker => {
+    //     marker.addEventListener('markerFound', function(){
+    //         document.getElementById('scanning-overlay').style.display = 'none';
+    //     });
+    // });
+    
 });
