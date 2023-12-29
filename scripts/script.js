@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.close-btn').addEventListener('click', function() {
         console.log("Close button clicked");
     
+        // const swiperElement = document.querySelector('mySwiper');
+        // const swiper2Element = document.querySelector('mySwiper2');
         const arScene = document.querySelector('#arScene');
 
         // Use the already selected swiperElement
@@ -43,19 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Swiper element (mySwiper2) not found");
         }
     
-        // Check if arScene is not undefined 
-        // Show and activate the AR scene
+        // Check if arScene is not undefined
         if (arScene) {
             arScene.style.display = 'block';
             console.log("AR scene element found and displayed.");
         } else {
             console.log("AR scene element not found.");
-            // Optionally, you might need to restart the AR scene if it doesn't activate automatically
-            // arScene.sceneEl.systems.arjs._arSessionStart();
         }
-
-            
-    });    
+    });
+    
 
     // detect target 
     const target0 = document.querySelector('#target-0');
@@ -63,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
         target0.addEventListener('targetFound', function() {
             if (swiper2Element) {
                 swiper2Element.style.display = 'block';
-                document.getElementById('scanning-overlay').style.display = 'none';
             }
         });
     }
