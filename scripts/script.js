@@ -55,8 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
             
-    });
-    
+    });    
 
     // detect target 
     const target0 = document.querySelector('#target-0');
