@@ -50,6 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("AR scene element found and displayed.");
         } else {
             console.log("AR scene element not found.");
+            // Optionally, you might need to restart the AR scene if it doesn't activate automatically
+            // arScene.sceneEl.systems.arjs._arSessionStart();
         }
 
             
@@ -62,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         target0.addEventListener('targetFound', function() {
             if (swiper2Element) {
                 swiper2Element.style.display = 'block';
+                document.getElementById('scanning-overlay').style.display = 'none';
             }
         });
     }
