@@ -26,8 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.close-btn').addEventListener('click', function() {
         console.log("Close button clicked");
     
-        // const swiperElement = document.querySelector('mySwiper');
-        // const swiper2Element = document.querySelector('mySwiper2');
         const arScene = document.querySelector('#arScene');
 
         // Use the already selected swiperElement
@@ -45,13 +43,16 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Swiper element (mySwiper2) not found");
         }
     
-        // Check if arScene is not undefined
+        // Check if arScene is not undefined 
+        // Show and activate the AR scene
         if (arScene) {
             arScene.style.display = 'block';
             console.log("AR scene element found and displayed.");
         } else {
             console.log("AR scene element not found.");
         }
+
+            
     });
     
 
