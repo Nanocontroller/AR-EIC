@@ -46,16 +46,20 @@
         <img id="card0" src="images/marker_00.png" />
         <img id="card1" src="images/marker_02.png" />
         <video id="co2" autoplay loop="true" src="./assets/videos/TaggedCO2_1024x512p30.mp4"> </video>
-        <a-asset-item id="spiralModel" src="assets/models/spiral.glb"></a-asset-item>
+        <!-- <a-asset-item id="spiralModel" src="assets/models/spiral.glb"></a-asset-item> -->
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity id="target-0" mindar-image-target="targetIndex: 0">
         <a-plane src="#card0" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
-        <a-gltf-model rotation="0 0 0 " position="0 0 0.5" scale=".75 .75 .75" src="#spiralModel"
+        <!-- SPIRAL 3D model -->
+        <!-- <a-gltf-model rotation="0 0 0 " position="0 0 0.5" scale=".75 .75 .75" src="#spiralModel"
           animation="property: rotation; to: 0 360 0; dur: 5000; easing: easeInOutQuad; loop: true; dir: alternate"
-        >
+        > -->
+        <a-sphere src="#co2" radius="1" segments-height="36"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+        </a-sphere>
         <a-box
           position="0 0.5 0"
           material="color: blue; opacity: 1;"
