@@ -1,4 +1,4 @@
-# AR App for EIC Dashboards and Hyperwall
+# AR App for EIC content
 
 ## Overview
 
